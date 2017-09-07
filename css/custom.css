@@ -1,0 +1,24 @@
+.container{
+    padding:10px;
+}
+.btn {
+    margin: auto;
+}
+h2{
+    font-family: "Century Schoolbook";
+    margin:20px;
+    padding:10px;
+
+}
+.heart-off{
+    color:grey;
+}
+.heart-on{
+    color:red;
+}
+.fa-shopping-cart{
+    color:blue;
+}
+.table{
+
+}
