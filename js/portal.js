@@ -8,7 +8,7 @@ $(function (){
     $('.btn-outline-primary').click( function(ev){
         let id = $(ev.target).parent().attr('data-id');
         // this will aceess the data-id of parent div of button Add to cart
-        //console.log(id);
+        console.log(id);
         add_and_save(id);
     })
 
