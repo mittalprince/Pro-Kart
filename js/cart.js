@@ -2,7 +2,6 @@
 // js for shopping cart
 
 $(function(){
-    total=0;
     item_price = [0,0,0,0,0,0,0,0,0,0,0,0]
     cart_list = $("#product_list");
 
@@ -14,6 +13,27 @@ $(function(){
 
 
 })
+
+// function for fa fa-plus-circle working
+function addqty(ev){
+    let id = parseInt($(ev.target).parent().parent().attr('data-id'));
+    console.log(id)
+    retrieve_item();
+    qty[id]++;
+    save_item();
+    showcart();
+}
+
+//function for fa fa-minus-circle working
+function subqty(ev){
+    let id = parseInt($(ev.target).parent().parent().attr('data-id'))
+    console.log(id)
+    retrieve_item();
+    qty[id]--;
+    save_item();
+    showcart();
+}
+
 // calculate the total price of each item
 function cal_amt(){
 
@@ -24,7 +44,8 @@ function cal_amt(){
 }
 
 // calculate the total of prices of all items
-function total_amt(){;
+function total_amt(){
+    total = 0;
     for(let i in item_price){
         total += item_price[i]
     }
@@ -50,9 +71,9 @@ function showcart(){
             trow.append(col1.append($(`<span class="col-1">${i+1}</span>`)));
             trow.append(col2.append($(`<span class="col-3">${products[i]}</span>`)));
             trow.append(col3.append($(`<span class="col-3">${price[i]}</span>`)));
-            trow.append(col4.append($(`<i class="fa fa-minus-circle icn"></i>`)));
+            trow.append(col4.append($(`<i class="fa fa-minus-circle icn"></i>`).click(subqty)));
             trow.append(col4.append($(`<span class="col-3">${qty[i]}</span>`)));
-            trow.append(col4.append($(`<i class="fa fa-plus-circle icn"></i>`)));
+            trow.append(col4.append($(`<i class="fa fa-plus-circle icn"></i>`).click(addqty)));
             trow.append(col5.append($(`<span class="col-2">${item_price[i]}</span>`)));
             cart_list.append(trow);
         }
