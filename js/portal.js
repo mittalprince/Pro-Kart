@@ -3,7 +3,7 @@
 
 $(function (){
 
-    var qty = [0,0,0,0,0,0,0,0,0,0,0,0];
+    qty = [0,0,0,0,0,0,0,0,0,0,0,0];
 
     $('.btn-outline-primary').click( function(ev){
         let id = $(ev.target).parent().attr('data-id');

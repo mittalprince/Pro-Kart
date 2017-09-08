@@ -27,8 +27,9 @@ function cal_amt(){
 function total_amt(){;
     for(let i in item_price){
         total += item_price[i]
-        return total;
     }
+    console.log(total);
+    return total;
 }
 
 //this function append the items to the HTML page
@@ -49,9 +50,18 @@ function showcart(){
             trow.append(col1.append($(`<span class="col-1">${i+1}</span>`)));
             trow.append(col2.append($(`<span class="col-3">${products[i]}</span>`)));
             trow.append(col3.append($(`<span class="col-3">${price[i]}</span>`)));
+            trow.append(col4.append($(`<i class="fa fa-minus-circle icn"></i>`)));
             trow.append(col4.append($(`<span class="col-3">${qty[i]}</span>`)));
+            trow.append(col4.append($(`<i class="fa fa-plus-circle icn"></i>`)));
             trow.append(col5.append($(`<span class="col-2">${item_price[i]}</span>`)));
             cart_list.append(trow);
         }
     }
+
+    let row2 = $(`<tr>`)
+    let col6 = $(`<td colspan="4">`)
+    let col7 = $(`<td colspan="2">`)
+    row2.append(col6.append($(`<span>Total</span>`)));
+    row2.append(col7.append($(`<span>${total}</span>`)));
+    cart_list.append(row2)
 }

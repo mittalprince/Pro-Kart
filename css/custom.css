@@ -19,6 +19,12 @@ h2{
 .fa-shopping-cart{
     color:blue;
 }
-.tbody{
+.table{
 text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.icn{
+    color: #0275d8;
+    margin:2px;
 }
